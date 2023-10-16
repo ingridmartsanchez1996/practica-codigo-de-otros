@@ -7,7 +7,9 @@ const $b = document.querySelector('#blog');
 //Adding Location class
 const $l = document.querySelector('#location');
 
-function displayUser(username) {
+// Async keyword was added otherwise the await 
+//  keyword can't be used inside of the funciton. 
+async function displayUser(username) {
   $n.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
   const data = response.data() // parse to json
