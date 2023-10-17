@@ -12,7 +12,7 @@ const $l = document.querySelector('#location');
 async function displayUser(username) {
   $n.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
-  const data = await response.data(); // parse response to json
+  const data = await response.json(); // parse response to json
   console.log(data);
   // Changing ' to ` so the fetched data is displayed in the ui.
   $n.textContent = `${data.name}`;
